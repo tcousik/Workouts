@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workouts");
 
@@ -28,7 +28,3 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-const first = () => {
-  console.log("blah");
-};
