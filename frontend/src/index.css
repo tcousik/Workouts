@@ -14,8 +14,8 @@ body {
 header {
   background: #fff;
 }
-header .container {
-  max-width: 1400px;
+header.container {
+  max-width: auto;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -25,6 +25,9 @@ header .container {
 header a {
   color: #333;
   text-decoration: none;
+}
+header h1 {
+  padding-left: 80px;
 }
 .pages {
   max-width: 1400px;
