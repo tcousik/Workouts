@@ -38,7 +38,7 @@ header h1 {
 /* homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2.5fr 1fr;
   gap: 100px;
 }
 .workout-details {
@@ -49,25 +49,30 @@ header h1 {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
-.workout-details h4 {
+
+.workout-details .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-details .header h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
-.workout-details p {
-  margin: 0;
-  font-size: 0.9em;
-  color: #555;
+
+.workout-details .header .buttons {
+  display: flex;
 }
-.workout-details span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+
+.workout-details .header .buttons span {
   cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
   border-radius: 50%;
   color: #333;
+  margin-left: 10px; /* Add margin to space out the buttons */
 }
 
 /* new workout form */

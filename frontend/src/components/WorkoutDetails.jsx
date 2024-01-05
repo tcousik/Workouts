@@ -5,7 +5,7 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutContext();
 
-  const handleClick = async () => {
+  const handleDelete = async () => {
     const response = await fetch(
       "http://localhost:4000/api/workouts/" + workout._id,
       { method: "DELETE" }
@@ -17,20 +17,29 @@ const WorkoutDetails = ({ workout }) => {
     }
   };
 
+  const handleEdit = async () => {};
+
   return (
     <div className="workout-details">
-      <h4>
-        <strong>{workout.name}</strong>
-      </h4>
+      <div className="header">
+        <h4>
+          <strong>{workout.name}</strong>
+        </h4>
+        <div className="buttons">
+          <span className="material-symbols-outlined" onClick={handleEdit}>
+            edit
+          </span>
+          <span className="material-symbols-outlined" onClick={handleDelete}>
+            delete
+          </span>
+        </div>
+      </div>
       <p>Load(lb): {workout.load}</p>
       <p>Reps: {workout.reps}</p>
       <p>Sets: {workout.sets}</p>
       <p>
         {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}
       </p>
-      <span className="material-symbols-outlined" onClick={handleClick}>
-        delete
-      </span>
     </div>
   );
 };
