@@ -30,7 +30,9 @@ const createWorkout = async (req, res) => {
   const { name, load, reps, sets } = req.body;
 
   let emptyFields = [];
+  let errorFields = [];
 
+  // Empty entries
   if (!name) {
     emptyFields.push("name");
   }
@@ -44,10 +46,27 @@ const createWorkout = async (req, res) => {
     emptyFields.push("sets");
   }
 
+  // Invalid numbers
+  if (load < 0) {
+    errorFields.push("load");
+  }
+  if (reps < 1) {
+    errorFields.push("reps");
+  }
+  if (sets < 1) {
+    errorFields.push("sets");
+  }
+
   if (emptyFields.length > 0) {
     return res
       .status(400)
       .json({ error: "Please fill in all the required fields!", emptyFields });
+  }
+
+  if (errorFields.length > 0) {
+    return res
+      .status(400)
+      .json({ error: "Please enter a valid number!", errorFields });
   }
 
   // Add to DB
