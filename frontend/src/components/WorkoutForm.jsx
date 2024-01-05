@@ -21,7 +21,6 @@ const WorkoutForm = () => {
       body: JSON.stringify(workout),
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
     });
 
@@ -43,7 +42,7 @@ const WorkoutForm = () => {
 
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h3>Add a workout</h3>
+      <h3 style={{ textAlign: "center" }}>Add a Workout</h3>
 
       <label htmlFor="name">Exercise Name:</label>
       <input
@@ -54,7 +53,7 @@ const WorkoutForm = () => {
         name="name"
         className={emptyFields.includes("name") ? "error" : ""}
       />
-      <label htmlFor="load">Load (pounds):</label>
+      <label htmlFor="load">Load (lb):</label>
       <input
         type="number"
         onChange={(e) => setLoad(e.target.value)}
@@ -63,7 +62,7 @@ const WorkoutForm = () => {
         name="load"
         className={emptyFields.includes("load") ? "error" : ""}
       />
-      <label htmlFor="reps"># Of Reps:</label>
+      <label htmlFor="reps">Number of Reps:</label>
       <input
         type="number"
         onChange={(e) => setReps(e.target.value)}
@@ -72,7 +71,7 @@ const WorkoutForm = () => {
         name="reps"
         className={emptyFields.includes("reps") ? "error" : ""}
       />
-      <label htmlFor="sets"># Of Sets:</label>
+      <label htmlFor="sets">Number of Sets:</label>
       <input
         type="number"
         onChange={(e) => setSets(e.target.value)}
