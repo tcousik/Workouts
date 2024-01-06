@@ -13,7 +13,9 @@ const EditForm = ({ workout, onCancel, onSave }) => {
     setEditedWorkout((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
+    e.preventDefault();
+
     try {
       const response = await fetch(
         `http://localhost:4000/api/workouts/${workout._id}`,
@@ -38,7 +40,7 @@ const EditForm = ({ workout, onCancel, onSave }) => {
   };
 
   return (
-    <form className="create">
+    <form className="create" onSubmit={handleSave}>
       <label>
         Exercise Name:
         <input
