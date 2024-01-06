@@ -40,7 +40,7 @@ const EditForm = ({ workout, onCancel, onSave }) => {
   return (
     <form className="create">
       <label>
-        Name:
+        Exercise Name:
         <input
           type="text"
           name="name"
@@ -49,7 +49,7 @@ const EditForm = ({ workout, onCancel, onSave }) => {
         />
       </label>
       <label>
-        Load:
+        Load (lb):
         <input
           type="text"
           name="load"

@@ -13,13 +13,13 @@ const getWorkout = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such workout!" });
+    return res.status(404).json({ error: "No such workout" });
   }
 
   const workout = await Workout.findById(id);
 
   if (!workout) {
-    return res.status(400).json({ error: "Workout not found!" });
+    return res.status(400).json({ error: "Workout not found" });
   }
 
   res.status(200).json(workout);
@@ -60,13 +60,13 @@ const createWorkout = async (req, res) => {
   if (emptyFields.length > 0) {
     return res
       .status(400)
-      .json({ error: "Please fill in all the required fields!", emptyFields });
+      .json({ error: "Please fill in all the required fields", emptyFields });
   }
 
   if (errorFields.length > 0) {
     return res
       .status(400)
-      .json({ error: "Please enter a valid number!", errorFields });
+      .json({ error: "Please enter a valid number", errorFields });
   }
 
   // Add to DB
@@ -84,13 +84,13 @@ const deleteWorkout = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such workout!" });
+    return res.status(404).json({ error: "No such workout" });
   }
 
   const workout = await Workout.findOneAndDelete({ _id: id });
 
   if (!workout) {
-    return res.status(400).json({ error: "Workout not found!" });
+    return res.status(400).json({ error: "Workout not found" });
   }
 
   res.status(200).json(workout);
@@ -101,7 +101,7 @@ const updateWorkout = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such workout!" });
+    return res.status(404).json({ error: "No such workout" });
   }
 
   const workout = await Workout.findByIdAndUpdate(
@@ -111,7 +111,7 @@ const updateWorkout = async (req, res) => {
   );
 
   if (!workout) {
-    return res.status(400).json({ error: "Workout not found!" });
+    return res.status(400).json({ error: "Workout not found" });
   }
 
   res.status(200).json(workout);
