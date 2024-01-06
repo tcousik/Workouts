@@ -38,7 +38,7 @@ const EditForm = ({ workout, onCancel, onSave }) => {
   };
 
   return (
-    <div className="edit-workout-form">
+    <form className="create">
       <label>
         Name:
         <input
@@ -75,9 +75,13 @@ const EditForm = ({ workout, onCancel, onSave }) => {
           onChange={handleChange}
         />
       </label>
-      <button onClick={handleSave}>Save</button>
-      <button onClick={onCancel}>Cancel</button>
-    </div>
+      <button style={{ margin: "2px" }} onClick={handleSave}>
+        Save
+      </button>
+      <button style={{ margin: "2px" }} onClick={onCancel}>
+        Cancel
+      </button>
+    </form>
   );
 };
 
