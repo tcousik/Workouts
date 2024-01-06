@@ -48,6 +48,10 @@ const WorkoutDetails = ({ workout }) => {
     }
   };
 
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   return (
     <div className="workout-details">
       {editMode ? (
@@ -59,9 +63,7 @@ const WorkoutDetails = ({ workout }) => {
       ) : (
         <div>
           <div className="header">
-            <h4>
-              <strong>{workout.name}</strong>
-            </h4>
+            <h4>{workout.name}</h4>
             <div className="buttons">
               <span className="material-symbols-outlined" onClick={handleEdit}>
                 edit
@@ -74,13 +76,21 @@ const WorkoutDetails = ({ workout }) => {
               </span>
             </div>
           </div>
-          <p>Load(lb): {workout.load}</p>
-          <p>Reps: {workout.reps}</p>
-          <p>Sets: {workout.sets}</p>
           <p>
-            {formatDistanceToNow(new Date(workout.createdAt), {
-              addSuffix: true,
-            })}
+            <strong>Load(lb):</strong> {workout.load}
+          </p>
+          <p>
+            <strong>Reps:</strong> {workout.reps}
+          </p>
+          <p>
+            <strong>Sets:</strong> {workout.sets}
+          </p>
+          <p>
+            {capitalizeFirstLetter(
+              formatDistanceToNow(new Date(workout.createdAt), {
+                addSuffix: true,
+              })
+            )}
           </p>
         </div>
       )}
