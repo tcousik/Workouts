@@ -24,6 +24,7 @@ header.container {
 }
 header a {
   color: #333;
+  font-size: 1.5em;
   text-decoration: none;
 }
 header h1 {
@@ -58,7 +59,7 @@ header h1 {
 
 .workout-details .header h4 {
   margin: 0 0 10px 0;
-  font-size: 2em;
+  font-size: 1.75em;
   color: var(--primary);
 }
 
