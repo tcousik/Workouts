@@ -51,46 +51,50 @@ const EditForm = ({ workout, onCancel, onSave }) => {
 
   return (
     <form className="create" onSubmit={handleSave}>
-      <label>
+      <label style={{ fontSize: "20px" }}>
         Exercise Name:
         <input
+          style={{ fontSize: "15px" }}
           type="text"
           name="name"
           value={editedWorkout.name}
           onChange={handleChange}
         />
       </label>
-      <label>
-        Load (lb):
+      <label style={{ fontSize: "20px" }}>
+        Load (pounds):
         <input
+          style={{ fontSize: "15px" }}
           type="text"
           name="load"
           value={editedWorkout.load}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label style={{ fontSize: "20px" }}>
         Reps:
         <input
+          style={{ fontSize: "15px" }}
           type="text"
           name="reps"
           value={editedWorkout.reps}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label style={{ fontSize: "20px" }}>
         Sets:
         <input
+          style={{ fontSize: "15px" }}
           type="text"
           name="sets"
           value={editedWorkout.sets}
           onChange={handleChange}
         />
       </label>
-      <button style={{ margin: "2px" }} onClick={handleSave}>
+      <button style={{ margin: "2px", fontSize: "15px" }} onClick={handleSave}>
         Save
       </button>
-      <button style={{ margin: "2px" }} onClick={onCancel}>
+      <button style={{ margin: "2px", fontSize: "15px" }} onClick={onCancel}>
         Cancel
       </button>
     </form>

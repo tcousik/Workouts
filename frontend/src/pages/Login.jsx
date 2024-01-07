@@ -14,7 +14,7 @@ const Login = () => {
 
   return (
     <form className="login" onSubmit={handleSubmit}>
-      <h3 style={{ textAlign: "center" }}>Log In</h3>
+      <h2 style={{ textAlign: "center" }}>Log In</h2>
 
       <label>
         Email:

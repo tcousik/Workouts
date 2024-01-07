@@ -14,7 +14,7 @@ const Signup = () => {
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
-      <h3 style={{ textAlign: "center" }}>Sign Up</h3>
+      <h2 style={{ textAlign: "center" }}>Sign Up</h2>
 
       <label>
         Email:

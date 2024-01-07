@@ -81,27 +81,32 @@ const WorkoutDetails = ({ workout }) => {
           <div className="header">
             <h4>{workout.name}</h4>
             <div className="buttons">
-              <span className="material-symbols-outlined" onClick={handleEdit}>
+              <span
+                className="material-symbols-outlined"
+                style={{ fontSize: "30px" }}
+                onClick={handleEdit}
+              >
                 edit
               </span>
               <span
                 className="material-symbols-outlined"
+                style={{ fontSize: "30px" }}
                 onClick={handleDelete}
               >
                 delete
               </span>
             </div>
           </div>
-          <p>
-            <strong>Load(lb):</strong> {workout.load}
+          <p style={{ fontSize: "20px" }}>
+            <strong>Load (pounds):</strong> {workout.load}
           </p>
-          <p>
+          <p style={{ fontSize: "20px" }}>
             <strong>Reps:</strong> {workout.reps}
           </p>
-          <p>
+          <p style={{ fontSize: "20px" }}>
             <strong>Sets:</strong> {workout.sets}
           </p>
-          <p>
+          <p style={{ fontSize: "18px" }}>
             {capitalizeFirstLetter(
               formatDistanceToNow(new Date(workout.createdAt), {
                 addSuffix: true,

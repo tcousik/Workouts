@@ -53,10 +53,17 @@ const WorkoutForm = () => {
 
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h3 style={{ textAlign: "center" }}>Add a Workout</h3>
+      <h3
+        style={{ textAlign: "center", fontSize: "30px", marginBottom: "10px" }}
+      >
+        Add a Workout
+      </h3>
 
-      <label htmlFor="name">Exercise Name:</label>
+      <label htmlFor="name" style={{ fontSize: "20px" }}>
+        Exercise Name:
+      </label>
       <input
+        style={{ fontSize: "15px" }}
         type="text"
         onChange={(e) => setName(e.target.value)}
         value={name}
@@ -64,8 +71,11 @@ const WorkoutForm = () => {
         name="name"
         className={emptyFields.includes("name") ? "error" : ""}
       />
-      <label htmlFor="load">Load (lb):</label>
+      <label htmlFor="load" style={{ fontSize: "20px" }}>
+        Load (pounds):
+      </label>
       <input
+        style={{ fontSize: "15px" }}
         type="number"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
@@ -77,8 +87,11 @@ const WorkoutForm = () => {
             : ""
         }
       />
-      <label htmlFor="reps">Number of Reps:</label>
+      <label htmlFor="reps" style={{ fontSize: "20px" }}>
+        Number of Reps:
+      </label>
       <input
+        style={{ fontSize: "15px" }}
         type="number"
         onChange={(e) => setReps(e.target.value)}
         value={reps}
@@ -90,8 +103,11 @@ const WorkoutForm = () => {
             : ""
         }
       />
-      <label htmlFor="sets">Number of Sets:</label>
+      <label htmlFor="sets" style={{ fontSize: "20px" }}>
+        Number of Sets:
+      </label>
       <input
+        style={{ fontSize: "15px" }}
         type="number"
         onChange={(e) => setSets(e.target.value)}
         value={sets}
@@ -103,7 +119,7 @@ const WorkoutForm = () => {
             : ""
         }
       />
-      <button>Add Workout</button>
+      <button style={{ fontSize: "15px" }}>Add Workout</button>
       {error && <div className="error">{error}</div>}
     </form>
   );
