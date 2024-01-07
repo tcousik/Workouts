@@ -54,7 +54,12 @@ const WorkoutForm = () => {
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h3
-        style={{ textAlign: "center", fontSize: "30px", marginBottom: "10px" }}
+        style={{
+          textAlign: "center",
+          fontSize: "30px",
+          marginTop: "0",
+          marginBottom: "10px",
+        }}
       >
         Add a Workout
       </h3>
@@ -119,7 +124,7 @@ const WorkoutForm = () => {
             : ""
         }
       />
-      <button style={{ fontSize: "15px" }}>Add Workout</button>
+      <button>Add Workout</button>
       {error && <div className="error">{error}</div>}
     </form>
   );
