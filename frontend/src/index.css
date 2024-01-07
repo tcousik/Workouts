@@ -43,6 +43,16 @@ header h1 {
   grid-template-columns: 2.5fr 1fr;
   gap: 100px;
 }
+.home.centered {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.workout-form-centered {
+  justify-self: center;
+  width: 80%;
+  max-width: 400px;
+  margin-top: -50px;
+}
 .workout-details {
   background: #fff;
   border-radius: 4px;

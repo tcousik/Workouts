@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-const WorkoutForm = () => {
+const WorkoutForm = ({ noWorkouts }) => {
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
 
@@ -52,7 +52,10 @@ const WorkoutForm = () => {
   };
 
   return (
-    <form className="create" onSubmit={handleSubmit}>
+    <form
+      className={`create ${noWorkouts ? "workout-form-centered" : ""}`}
+      onSubmit={handleSubmit}
+    >
       <h3
         style={{
           textAlign: "center",

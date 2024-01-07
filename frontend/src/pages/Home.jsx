@@ -27,15 +27,17 @@ const Home = () => {
     }
   }, [dispatch, user]);
 
+  const noWorkouts = !workouts || workouts.length === 0;
+
   return (
-    <div className="home">
+    <div className={`home ${noWorkouts ? "centered" : ""}`}>
       <div className="workouts">
         {workouts &&
           workouts.map((workout) => (
             <WorkoutDetails key={workout._id} workout={workout} />
           ))}
       </div>
-      <WorkoutForm />
+      <WorkoutForm noWorkouts={noWorkouts} />
     </div>
   );
 };
