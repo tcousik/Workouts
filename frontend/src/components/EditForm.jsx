@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const EditForm = ({ workout, onCancel, onSave }) => {
   const [editedWorkout, setEditedWorkout] = useState({
@@ -7,6 +8,9 @@ const EditForm = ({ workout, onCancel, onSave }) => {
     reps: workout.reps,
     sets: workout.sets,
   });
+  const [error, setError] = useState(null);
+
+  const { user } = useAuthContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,6 +20,11 @@ const EditForm = ({ workout, onCancel, onSave }) => {
   const handleSave = async (e) => {
     e.preventDefault();
 
+    if (!user) {
+      setError("You must be logged in");
+      return;
+    }
+
     try {
       const response = await fetch(
         `http://localhost:4000/api/workouts/${workout._id}`,
@@ -23,6 +32,7 @@ const EditForm = ({ workout, onCancel, onSave }) => {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${user.token}`,
           },
           body: JSON.stringify(editedWorkout),
         }
