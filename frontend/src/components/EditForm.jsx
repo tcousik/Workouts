@@ -91,10 +91,10 @@ const EditForm = ({ workout, onCancel, onSave }) => {
           onChange={handleChange}
         />
       </label>
-      <button style={{ margin: "2px", fontSize: "15px" }} onClick={handleSave}>
+      <button style={{ margin: "2px", fontSize: "18px" }} onClick={handleSave}>
         Save
       </button>
-      <button style={{ margin: "2px", fontSize: "15px" }} onClick={onCancel}>
+      <button style={{ margin: "2px", fontSize: "18px" }} onClick={onCancel}>
         Cancel
       </button>
     </form>
