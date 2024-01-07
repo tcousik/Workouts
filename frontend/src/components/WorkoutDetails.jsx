@@ -1,16 +1,27 @@
 import { useState } from "react";
-import { useWorkoutContext } from "../hooks/useWorkoutsContext";
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import EditForm from "./EditForm";
 
 const WorkoutDetails = ({ workout }) => {
-  const { dispatch } = useWorkoutContext();
+  const { dispatch } = useWorkoutsContext();
   const [editMode, setEditMode] = useState(false);
+  const { user } = useAuthContext();
 
   const handleDelete = async () => {
+    if (!user) {
+      return;
+    }
+
     const response = await fetch(
       "http://localhost:4000/api/workouts/" + workout._id,
-      { method: "DELETE" }
+      {
+        method: "DELETE",
+        headers: {
+          "Authorization": `Bearer ${user.token}`,
+        },
+      }
     );
     const json = await response.json();
 
