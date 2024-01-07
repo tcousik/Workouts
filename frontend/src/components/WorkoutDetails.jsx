@@ -15,7 +15,7 @@ const WorkoutDetails = ({ workout }) => {
     }
 
     const response = await fetch(
-      "http://localhost:4000/api/workouts/" + workout._id,
+      "https://workouts-back.onrender.com/api/workouts/" + workout._id,
       {
         method: "DELETE",
         headers: {
@@ -41,7 +41,7 @@ const WorkoutDetails = ({ workout }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/workouts/${workout._id}`,
+        `https://workouts-back.onrender.com/api/workouts/${workout._id}`,
         {
           method: "PATCH",
           headers: {
