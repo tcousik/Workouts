@@ -12,5 +12,21 @@ This is a CRUD (Create, Read, Update, Delete) application built using the MERN s
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/tcousik/Workouts.git
+   git clone https://github.com/tcousik/Books.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Open two terminals and navigate to the backend and frontend folders
+      ```sh
+   cd frontend 
+   ```
+      and
+      ```sh
+   cd backend
+   ```
+5. Run the program in localhost
+      ```sh
+   npm run dev
    ```
